@@ -3,7 +3,7 @@ import { Movies } from '../data/models/movies';
 
 const router = express.Router();
 
-router.get('/movie/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   const movieId = req.params.id;
   try {
     const movie = await Movies.findById(movieId);
