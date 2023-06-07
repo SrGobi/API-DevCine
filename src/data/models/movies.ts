@@ -1,22 +1,27 @@
 import { Document, model, Schema } from 'mongoose';
 
+export class Links {
+  "1080p": Array<string>;
+  "4k": Array<string>;
+}
+
 export interface MoviesDocument extends Document {
   _id: string;
   title: string;
-  image: string;
+  img: string;
   genre: string;
   year: number;
-  links: Array<string>;
+  links: Links;
 }
 
 // Definir el esquema de la película
 export const moviesSchema = new Schema({
   _id: String,
   title: String,
-  image: String,
+  img: String,
   genre: String,
   year: Number,
-  links: { type: Array, required: true },
+  links: { type: Object, default: new Links(), required: true },
 });
 
 // Definir el modelo de la película

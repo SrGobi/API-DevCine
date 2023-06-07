@@ -10,10 +10,10 @@ router.get('/:id', async (req, res) => {
     if (movie) {
       res.json(movie);
     } else {
-      res.status(404).json({ error: 'Movie not found'});
+      res.status(404).json({ error: 'Movie not found' });
     }
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error'});
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
